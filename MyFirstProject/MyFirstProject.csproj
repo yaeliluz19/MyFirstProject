@@ -31,7 +31,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\CSS\" />
     <Folder Include="wwwroot\Img\" />
   </ItemGroup>
 
