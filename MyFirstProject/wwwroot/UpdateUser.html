@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   
+    <script src="JS/User.js"></script>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <label>:שם פרטי</label>
+    <input id="firstname1" type="text" />
+    <br /><br />
+    <label>:שם משפחה</label>
+    <input id="lastname1" type="text" />
+    <br /><br />
+    <label>:שם משתמש</label>
+    <input id="username1" type="text" />
+    <br /><br />
+    <label>:סיסמה</label>
+    <input id="password1" type="password" oninput="CheckPassword()" />
+    <progress id="progress" value="0" max="4"></progress>
+    <br /><br />
+    <label id="passlabel"></label>
+    <br /><br />
+    <div id="strentgh"></div>
+    <button onclick="UpdateUser()">עידכון</button><br /><br /><br />
+    <a href="Products.html">חזרה לקניות</a>
+</body>
+</html>
