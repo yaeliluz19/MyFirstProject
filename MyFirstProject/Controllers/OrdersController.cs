@@ -24,9 +24,11 @@ namespace MyFirstProject.Controllers
             try
             {
                 Order order =  _mapper.Map<OrderDTO, Order>(orderItemDTO);
-                Order  order2 = await _orderService.CreateOrder(order); 
-                if (order2 != null)
-                    return Ok(order2);
+                Order  order2 = await _orderService.CreateOrder(order);
+                OrderDTO order3 = _mapper.Map<Order,OrderDTO>(order2);
+
+                if (order3 != null)
+                    return Ok(order3);
                 return BadRequest();
             }
             catch (Exception ex)

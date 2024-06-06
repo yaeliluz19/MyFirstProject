@@ -11,56 +11,31 @@ const showProducts = (data) => {
     const template = document.getElementById("temp-row");
     let sum = 0, count = 0;
     
-    data.forEach(p => { sum += p.quantity; count += p.price * p.quantity })
-    document.getElementById('itemCount').textContent = sum;
-    document.getElementById('totalAmount').textContent = count;
-
-    data.forEach((product) => {
-
+    data.forEach(product => {
+        sum += product.quantity;
+        count += product.price * product.quantity
         const card = template.content.cloneNode(true)
-        card.querySelector('.image').src = '../Img/' + product.imageUrl
+        card.querySelector('img').src = '../Img/' + product.imageUrl
         card.querySelector('.price').innerText = product.quantity * product.price
         card.querySelector('.descriptionColumn').innerText = product.description
-        //card.querySelector('h3').textContent = product.productName
-        //card.querySelector('.itemNumber').textContent = product.price
-        //card.querySelector('.availabilityColumn').innerText = product.description
         card.querySelector('.availabilityColumn').textContent = product.quantity
-        card.querySelector('.DeleteButton').addEventListener("click", () => { removeFromBasket(product) })
+        card.querySelector(".DeleteButton").addEventListener('click', () => { product.quantity = 1, removeFromBasket(product) });
+        card.querySelector(".minus").addEventListener('click', () => { removeFromBasket(product) });
+        card.querySelector(".plus").addEventListener('click', () => { addToBasket(product) });
         document.getElementById("itemList").appendChild(card)
-    }
-    )
-}
-/*const drawSelectedProducts = (products) => {
-
-    const template = document.getElementById('temp-row');
-
-    let sum = 0,count=0;
-
+    })
     
-    products.forEach(p => { sum += p.quantity; count += p.price *p.quantity })
-   
-    //document.getElementById('itemCount').textContent = sum;
-   // document.getElementById('totalAmount').textContent = count;
-
-    products.forEach(item => {
-
-        const row = template.content.cloneNode(true);
-        row.querySelector(".price").innerText = item.price * item.quantity;
-        row.querySelector(".image").src = '../Images/' + item.imageUrl;
-        row.querySelector(".descriptionColumn").innerText = item.description;
-        row.querySelector(".quantity").innerText = item.quantity
-        row.querySelector(".DeleteButton").addEventListener('click', () => { item.quantity = 1; removeFromBasket(item) });
-        
-        
-        row.querySelector(".plus").addEventListener('click', () => { addToBasket(item) });
-        row.querySelector(".minus").addEventListener('click', () => { removeFromBasket(item) });
-
-        document.getElementById("itemList").appendChild(row);
-    });
-}*/
-
-
-
+    document.getElementById('itemCount').innerHTML = sum;
+    document.getElementById('totalAmount').innerHTML = count;
+}
+addToBasket = (product) => {
+    const products = JSON.parse(sessionStorage.getItem('Basket'))
+    const index = products.findIndex(p => p.productId == product.productId);
+    products[index].quantity += 1
+    sessionStorage.setItem('Basket', JSON.stringify(products))
+    document.getElementById("itemList").replaceChildren();
+    showProducts(products);
+}
 const removeFromBasket = (product) => {
     const products = JSON.parse(sessionStorage.getItem('Basket'));
     const index = products.findIndex(p => p.productId == product.productId)
@@ -84,7 +59,7 @@ const placeOrder = async() => {
         window.location.href = 'Products.html'
     }
 
-    products.forEach(e => orderItems.push({ "ProductName": e.ProductName, "Quantity": e.Quantity }))
+    products.forEach(e => orderItems.push({ "ProductId": e.productId, "ProductName": e.productName, "Quantity": e.quantity }))
     const orderData = {
 
         "OrderDate": new Date(),
@@ -111,28 +86,4 @@ const placeOrder = async() => {
 
     }
 }
-/*const userData = {
-
-        Password: document.getElementById("password3").value,
-        Email: document.getElementById("username3").value
-    }
-    const responseUser = await fetch('api/User/Login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(userData)
-    });
-   
-    const dataUser = await responseUser;
-    
-    
-    if (dataUser) {
-        sessionStorage.setItem("user", JSON.stringify(await dataUser.json()))
-        window.location.href = 'HomePage.html'
-       }
-    else {
-       window.location.href='AddUser.html'
-    } */
-
 getAllProducts()

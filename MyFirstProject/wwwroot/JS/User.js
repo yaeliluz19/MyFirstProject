@@ -4,7 +4,7 @@ const Register = async () => {
 
         FirstName:document.getElementById("firstname2").value,
         LastName:document.getElementById("lastname2").value,
-        Password:document.getElementById("password2").value,
+        Password:document.getElementById("password").value,
         Email:document.getElementById("username2").value
     }
     
@@ -36,7 +36,7 @@ const Login = async () => {
         Password: document.getElementById("password3").value,
         Email: document.getElementById("username3").value
     }
-    console.log(userData)
+  
     const responseUser = await fetch('api/User/Login', {
         method: 'POST',
         headers: {
@@ -46,7 +46,7 @@ const Login = async () => {
     });
    
     const dataUser = await responseUser;
-    console.log(dataUser)
+    
     
     if (dataUser) {
         sessionStorage.setItem("user", JSON.stringify(await dataUser.json()))
@@ -62,7 +62,7 @@ const Update = async () => {
 
         FirstName: document.getElementById("firstname1").value,
         LastName: document.getElementById("lastname1").value,
-        Password: document.getElementById("password1").value,
+        Password: document.getElementById("password").value,
         Email: document.getElementById("username1").value
     }
     const id = JSON.parse(sessionStorage.getItem("user")).userId
@@ -86,7 +86,7 @@ const Update = async () => {
 
 const CheckPassword = async () => {
 
-     Password= document.getElementById("Password").value
+     Password= document.getElementById("password").value
 
     const responsePost = await fetch('api/User/CheckPassword', {
         method: 'POST',

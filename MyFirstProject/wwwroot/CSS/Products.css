@@ -17,7 +17,7 @@ ul{
     float:right;
 }
 
-.QuickLinks ul li a::after {
+/*.QuickLinks ul li a::after {
     content: '|';
     margin-right: 10px;
     margin-left: 10px;
@@ -28,7 +28,7 @@ ul{
     content: '|';
     margin-right: 10px;
     margin-left: 10px;
-}
+}*/
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -45,12 +45,15 @@ ul{
 .img-w{
     height:300px;
 }
-
-p.description{
-    height:65px;
+/*.imageProduct{
+    width:100%;
+    height:100%
+}*/
+p.description {
+    height: 65px;
 }
 .bar::before {
-    content: 'חנות הצעצועים שלי';
+    content: 'חנות הרהיטים שלי';
     color: white;
     /* display: inline-block; */
     position: absolute;
@@ -59,6 +62,7 @@ p.description{
     top: 8px;
     left: 51%;
     font-family: Helvetica;
+    padding:12px;
 }
 .price {
     color: grey;
@@ -82,7 +86,7 @@ p.description{
 }
 .bar {
     background-color: black;
-    height: 35px;
+    height: 55px;
 }
 
 .Icon {
@@ -91,7 +95,7 @@ p.description{
     padding: 9px 2px 2px 2px;
     color: #4f8855;
     float: right;
-    margin: 1px 0 0 0;
+    margin: 10px 0 0 0;
     width: 24px;
     height: 21px;
 }
@@ -122,7 +126,7 @@ p.description{
     border-radius: 3px;
     display: inline-block;
     float: right;
-    margin:4px;
+    margin:14px;
 }
 
 .addedToBagDialogue::before {

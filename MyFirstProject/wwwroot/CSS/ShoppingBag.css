@@ -1,155 +1,172 @@
-﻿html, body {
-    direction: rtl;
+﻿/* General styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
-    padding: 0;
+    padding: 20px;
+    text-align: center;
 }
 
+/* Styling the cart container */
 .cart {
-    width: 960px;
-    margin: 0 auto;
-}
-th {
-    padding: 9px 11px;
-    text-align: right;
-    border-top: 1px solid #C7C5C5;
-    border-bottom: 1px solid #C7C5C5;
-    font-size: 13px;
-    font-weight: 500;
-    padding: 6px 0px;
-    font-family: 'azo-sans', sans-serif;
-    text-transform: uppercase;
-}
- td.imageColumn {
-    width: 66px;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-th.itemsColumn,td.imageColumn {
-    padding-right: 10px;
-}
-
-td {
-    padding: 15px;
-    padding-right: 0;
-    vertical-align: top;
-    border-bottom: 1px solid #C7C5C5;
-}
-
-
-.itemName, .subItemName {
-    font-family: 'azo-sans', sans-serif;
-    font-weight: 400;
-    margin-bottom: 2px;
-    font-size: 14px;
-    line-height: 100%;
-}
-
-
-.availabilityColumn {
-    width: 205px;
-    min-width: 205px;
-    max-width: 205px;
-    font-size: 14px;
-    color: #4D8958;
-    font-family: 'azo-sans', sans-serif;
-}
-.imageColumn div {
-    width: 66px;
-    height: 99px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: right center;
-}
-
-.delete a.showText {
-    text-indent: 0;
-    width: 90px;
-    padding-left: 10px;
-    background-image: url(/Images/icn-remove.png);
-    height: 24px;
-    background-position: left -3px;
-    font-size: 11px !important;
-    line-height: 15px;
-    position:relative;
-}
-
-.delete a {
-    display: block;
-    background-repeat: no-repeat;
-    text-decoration: none;
-    text-align: right;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    color:black;
-}
-
-.price {
-    font-weight: 500;
-    font-size: 16px;
-    margin-bottom: 2px;
-    font-family: 'azo-sans', sans-serif;
-    font-weight: 600 !important;
-}
-
-#title {
-    margin: 8px 0 12px;
-    padding-left: 15px;
-}
-
-    #title h1 {
-        margin: 15px 0 2px 0;
-        font-family: 'azo-sans', sans-serif;
-        font-size: 18px;
-        font-weight: 300;
-        line-height: 100%;
-        float: right;
-    }
-
-h1 {
-    font: 236.36% 'azo-sans',sans-serif;
+/* Title styling */
+#title h1 {
+    margin: 0 0 10px;
+    padding: 0;
+    font-size: 24px;
+    color: #333;
 }
 
 #title p {
-    font-size: 11px;
-    float: right;
-    padding-right: 10px;
-    padding-top: 19px;
+    font-size: 16px;
+    color: #666;
 }
 
-p, fieldset {
-    margin-bottom: 1em;
+#title span {
+    font-weight: bold;
+    color: #333;
 }
 
-a.GoToCheckout.TopLink {
-    margin-top: 10px;
+/* Clear both */
+.ClearBoth {
+    clear: both;
 }
 
-.ShoppingBag a.GoToCheckout {
-    float: left;
-    margin-right: 23px;
-}
-
+/* Buttons and links styling */
 .nxbtn.primary {
-    background: #1a6461;
-    font-size: 11px;
-}
-
-.nxbtn.primary, .nxbtn.secondary {
-    padding-top: 6px;
-    padding-bottom: 7px;
+    background-color: #28a745;
     color: #fff;
-    border: 0;
-    text-transform: uppercase;
-    font-family: 'azo-sans',sans-serif;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 10px;
 }
 
-.ContentArea a {
-    color: #111;
+.nxbtn.primary:hover {
+    background-color: #218838;
+}
+
+.shopmore {
+    color: #007bff;
     text-decoration: none;
 }
 
-.nxbtn {
-    border-radius: 3px;
-    display: inline-block;
-    padding: 4px 10px;
+.shopmore:hover {
+    text-decoration: underline;
+}
+
+/* Table styling */
+.cistGroup {
+    margin-top: 20px;
+}
+
+.items {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.items th, .items td {
+    border-bottom: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.items th {
+    background-color: #f9f9f9;
+    font-weight: normal;
+}
+
+.item-row {
+    background-color: #fff;
+}
+
+.item-row:hover {
+    background-color: #f1f1f1;
+}
+
+/* Column styling */
+.imageColumn img {
+    width: 50px; /* Reduced width */
+    height: auto;
+}
+
+.descriptionColumn h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.viewLink {
+    font-size: 14px;
+    color: #007bff;
+}
+
+.viewLink:hover {
+    text-decoration: underline;
+}
+
+.quantity, .availabilityColumn, .productPrice, .totalColumn, .plus, .minus {
+    text-align: center;
+}
+
+.delete img {
+    width: 20px;
+    cursor: pointer;
+}
+
+.DeleteButton {
+    color: #ff0000;
+    cursor: pointer;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+
+.DeleteButton:hover {
+    text-decoration: underline;
+}
+
+.plus button, .minus button {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.plus button:hover, .minus button:hover {
+    background-color: #e2e6ea;
+}
+
+/* Ensure the 'Add to Cart' button stays at the bottom of the product card */
+.descriptionColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.addToCartButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.addToCartButton:hover {
+    background-color: #0056b3;
 }

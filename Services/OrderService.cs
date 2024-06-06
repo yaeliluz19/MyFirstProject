@@ -35,9 +35,9 @@ namespace Services
             else
             {
 
-                order.OrderSum = sum;
                 _logger.LogError($"user {order.UserId}  tried perchasing with a difffrent price {order.OrderSum} instead of {sum}");
                 _logger.LogInformation($"user {order.UserId}  tried perchasing with a difffrent price {order.OrderSum} instead of {sum}");
+                order.OrderSum = sum;
                 return await _OrderRepositories.CreateOrder(order);
 
             }

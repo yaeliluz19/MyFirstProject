@@ -18,10 +18,12 @@
     <input id="username2" type="text" />
     <br /><br />
     <label>:סיסמה</label>
-    <input id="password2" type="password" />
+    <input id="password" type="password" oninput="CheckPassword()" />
+    <br />
+    <progress id="progress" value="0" max="4"></progress>
+    <div id="strentgh"></div>
+    <!--<label id="passlabel"></label>-->
     <br /><br />
-    <label id="passlabel"></label>
-    <br /><br />
-    <button style="color: chocolate" onclick="Register()">הרשמה</button>
+    <button style="color: #ffffff" onclick="Register()">הרשמה</button>
 </body>
 </html>

@@ -9,33 +9,50 @@
         <tr class="item-row">
             <td class="imageColumn">
                 <a rel="lightbox" href="#">
-                    <div class="image"></div>
+                    <div class="image">
+                        <img src="temp.jpg" alt="" style="width:50%">
+                    </div>
                 </a>
             </td>
             <td class="descriptionColumn">
                 <div>
                     <h3 class="itemName"></h3>
-                    <h6><p class="itemNumber"></p><a class="viewLink" href="https://www.next.co.il/he/g59522s11#407223">לפרטים נוספים</a></h6>
+                    <h6>
+                        <p class="itemNumber"></p>
+                        <a class="viewLink">לפרטים נוספים</a>
+                    </h6>
                 </div>
+            </td>
+            <td class="quantity">
+                <div>כמות</div>
             </td>
             <td class="availabilityColumn">
                 <div>במלאי</div>
             </td>
+            <td class="productPrice">
+                <p class="price"></p>
+            </td>
             <td class="totalColumn delete">
                 <div class="expandoHeight" style="height: 99px;">
-                    <p class="price"></p>
-                    <a href="#" title="לחצו כאן כדי להסיר את פריט זה" class="Hide DeleteButton showText">הסרת פריט</a>
+                    <img src="Img/icn-remove.png" href="#" />
+                    <a title="לחצו כאן כדי להסיר את פריט זה" class="Hide DeleteButton showText" href="#">הסרת פריט</a>
                 </div>
+            </td>
+            <td class="plus">
+                <div><button>+</button></div>
+            </td>
+            <td class="minus">
+                <div><button>-</button></div>
             </td>
         </tr>
     </template>
 </head>
-<body>
+<body style=text-align:center>
     <div class="cart">
         <div id="title">
             <h1> סל קניות </h1>
             <p>
-                הסל שלך מכיל <span id="itemCount"></span> פריטים ומגיע לסך של <span id="totalAmount"></span>
+                הסל שלך מכיל <span id="itemCount"></span> פריטים ומגיע לסך של <span id="totalAmount"></span>.
             </p>
             <a class="nxbtn primary GoToCheckout TopLink checkout_transfer" href="#" onclick="placeOrder(); return false;">לביצוע ההזמנה</a> <a class="shopmore" href="Products.html?fromShoppingBag=1">המשך בקניה</a> <div class="ClearBoth"></div>
         </div>
@@ -44,8 +61,9 @@
                 <thead>
                     <tr>
                         <th class="itemsColumn" colspan="2">פריטים</th>
-                        <th>כמות</th>
-                        <th class="totalColumn">סכום ההזמנה</th>
+                        <th colspan="1">כמות</th>
+                        <th colspan="1">זמינות</th>
+                        <th class="totalColumn" colspan="1">סכום ההזמנה</th>
                     </tr>
                 </thead>
                 <tbody id="itemList"></tbody>
